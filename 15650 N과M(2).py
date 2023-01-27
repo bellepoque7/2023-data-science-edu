@@ -1,7 +1,6 @@
 import sys
 read = sys.stdin.readline
 global N, M, visited
-
 def comb(cnt, start):
     if cnt == M:
         for i in range(1, N + 1):
@@ -9,7 +8,6 @@ def comb(cnt, start):
                 print(i, end=' ')
         print()
         return
-    
     for i in range(start, N + 1):
         visited[i] = True
         comb(cnt + 1, i + 1)
