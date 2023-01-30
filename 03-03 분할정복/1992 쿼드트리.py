@@ -13,14 +13,16 @@ def quad_tree(r, c, size):
             if a[r][c] != a[i][j]:
                 print("(", end='')
                 # 왼쪽 위, 오른쪽 위, 왼쪽 아래, 오른쪽 아래로 나눠서 체크
-                for nr, nc in [(r, c), (r, c + (size // 2)), (r + (size // 2), c), (r + (size // 2), c + (size // 2))]:
-                    quad_tree(nr, nc, size // 2)
+                quad_tree(r,c,size//2)
+                quad_tree(r,c+(size // 2),size//2)
+                quad_tree(r+(size // 2),c,size//2)
+                quad_tree(r+(size // 2),c+(size // 2),size//2)
                 # 한번이라도 안맞은 시점에서 나눠서 따로 출력 하므로 지금 크기에서 할 작업은 없음
                 print(")", end='')
                 return
     # 만약 여기까지 왔다면 모두 다 같은 숫자라는 의미
     print(a[r][c], end='')
-    
+
 def main():
     global N, a
     N = int(read().rstrip())
