@@ -5,7 +5,8 @@ read = sys.stdin.readline
 paper(1,1,9)
 -> paper(1,1,3), paper(4,1,3), paper(1,4,3), paper(4,4,3), paper(1,7,3), paper(4,7,3)
 위에 6개는 종료
--> paper(7,1,3), paper(7,4,3), paper(7,7,3)은 다시 9개씩 분화(즉, 1개씩 모두 리턴하여 size ==1 탈출조건 
+
+-> paper(7,1,3), paper(7,4,3), paper(7,7,3)은 다시 9개씩 분화(즉, 1개씩 모두 리턴하여 size ==1 탈출조건 도달
 '''
 
 global N, a, res

@@ -22,7 +22,6 @@ def paper(r, c, size):
                 paper(r+(size // 2), c, size//2)
                 paper(r+(size // 2), c+ (size // 2),size//2)
                 return
-
     # 모두 같은 색이었을 경우 처리
     if a[r][c] == 1:
         blue += 1
