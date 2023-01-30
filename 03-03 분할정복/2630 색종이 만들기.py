@@ -1,30 +1,46 @@
 import sys
+read = sys.stdin.readline
 
-N = int(sys.stdin.readline())
-paper = [list(map(int, sys.stdin.readline().split())) for _ in range(N)] 
+global N, a, blue, white
 
-# print(paper)  # 2D array 
-result = []
-
-def solution(r, c, N) :
-  #x,y = 0,0의 value에 대해서 color에 할당
-  color = paper[r][c]
-  # 원점부터 끝까지 탐색.
-  for i in range(r, r+N) :
-    #열도 탐색
-    for j in range(c, c+N) :
-      if color != paper[i][j] :
-        solution(r, c, N//2)
-        solution(r, c+N//2, N//2)
-        solution(r+N//2, c, N//2)
-        solution(r+N//2, c+N//2, N//2)
+def paper(r, c, size):
+    global N, a, blue, white
+    # 탈출 조건
+    if size == 1:
+        # 종이 카운팅
+        if a[r][c] == 1:
+            blue += 1
+        else:
+            white += 1
         return
-  if color == 0 :
-    result.append(0)
-  else :
-    result.append(1)
 
+    for i in range(r, r + size):
+        for j in range(c, c + size):
+            if a[i][j] != a[r][c]:
+                for nr, nc in [(r, c), (r, c + (size // 2)), (r + (size // 2), c), (r + (size // 2), c + (size // 2))]:
+                    paper(nr, nc, size // 2)
+                return
 
-solution(0,0,N)
-print(result.count(0))
-print(result.count(1))
+    # 모두 같은 색이었을 경우 처리
+    if a[r][c] == 1:
+        blue += 1
+    else:
+        white += 1
+
+def main():
+    global N, a, blue, white
+    N = int(read().rstrip())
+    a = [[]]
+
+    for i in range(N):
+        temp = list(map(int, read().rstrip().split()))
+        a.append([0] + temp)
+
+    blue = 0
+    white = 0
+    paper(1, 1, N)
+    print(white)
+    print(blue)
+
+if __name__ == '__main__':
+    main()
