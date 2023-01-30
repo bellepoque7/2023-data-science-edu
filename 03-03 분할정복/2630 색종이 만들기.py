@@ -17,8 +17,10 @@ def paper(r, c, size):
     for i in range(r, r + size):
         for j in range(c, c + size):
             if a[i][j] != a[r][c]:
-                for nr, nc in [(r, c), (r, c + (size // 2)), (r + (size // 2), c), (r + (size // 2), c + (size // 2))]:
-                    paper(nr, nc, size // 2)
+                paper(r, c, size//2)
+                paper(r, c+ (size // 2), size//2)
+                paper(r+(size // 2), c, size//2)
+                paper(r+(size // 2), c+ (size // 2),size//2)
                 return
 
     # 모두 같은 색이었을 경우 처리
