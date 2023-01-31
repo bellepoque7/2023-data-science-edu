@@ -1,5 +1,5 @@
 # 2023-data-science-edu
-2023 edu as mentor
+2023 edu as instructor
 
 
 ## 소개
