@@ -17,6 +17,8 @@ def main():
         # i 번째 줄은 숫자가 i개
         for j in range(1, i + 1):
             # 윗줄을 비교 해야 됨. 둘중에 누굴 받을 것인가
+            # 위에서 번저가는게 아니고 해당층에서, 그 위층까징의 sum 즉 dp테이블을 선택하는 형식
+            #dp[i] i 줄에 있는 경로탐색된 합의 결과
             dp[i][j] = max(dp[i - 1][j - 1], dp[i - 1][j]) + a[i][j]
     print(dp)
     print(max(dp[N]))

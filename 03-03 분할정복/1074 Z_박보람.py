@@ -1,7 +1,6 @@
 
 def search(r,c,start,n):
     global R,C,ans
-    #일단 n==1일때 부터틀림
     nn = (n//2)**2
 
     if R >= r+n//2 and C >= c+n//2: #11
@@ -14,7 +13,7 @@ def search(r,c,start,n):
         cstart = c
         start += nn*2
     
-    elif R < r+n//2 and C >= r+n//2: #01
+    elif R < r+n//2 and C >= c+n//2: #01
         rstart = r
         cstart = c+n//2
         start += nn*1
@@ -24,7 +23,6 @@ def search(r,c,start,n):
         cstart = c
         start += nn*0
     
-    
     if n==2:
         ans = start 
         return
@@ -33,7 +31,6 @@ def search(r,c,start,n):
 
     if ans != 0 : 
         return
-    return
 
 
 N,R,C = map(int,input().split())
