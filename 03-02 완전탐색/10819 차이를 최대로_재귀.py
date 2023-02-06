@@ -25,3 +25,6 @@ def sol(my_list):
 
 sol([])
 print(max(ansArr))
+
+
+## 수정
