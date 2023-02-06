@@ -1,41 +1,28 @@
-import sys
-read = sys.stdin.readline
-
-global N, a
-def quad_tree(r, c, size):
-    # 탈출 조건. 한 개밖에 없으면 그냥 출력하면 됨
-    if size == 1:
-        print(a[r][c], end='')
+def division(start_row, start_col, size):
+    if size == 1:   # 픽셀 하나일 때 
+        print(arr[start_row][start_col], end="")
         return
-    for i in range(r, r + size):
-        for j in range(c, c + size):
-            # 하나라도 안맞는게 나온 경우
-            if a[r][c] != a[i][j]:
-                print("(", end='')
-                # 왼쪽 위, 오른쪽 위, 왼쪽 아래, 오른쪽 아래로 나눠서 체크
-                quad_tree(r,c,size//2)
-                quad_tree(r,c+(size // 2),size//2)
-                quad_tree(r+(size // 2),c,size//2)
-                quad_tree(r+(size // 2),c+(size // 2),size//2)
-                # 한번이라도 안맞은 시점에서 나눠서 따로 출력 하므로 지금 크기에서 할 작업은 없음
-                print(")", end='')
+    num = arr[start_row][start_col]
+
+    for row in range(start_row, start_row + size):
+        for col in range(start_col, start_col + size):
+            if num != arr[row][col]:
+                print("(", end="")
+                size //= 2
+                division(start_row, start_col, size)
+                division(start_row, start_col + size, size)
+                division(start_row + size, start_col, size)
+                division(start_row + size, start_col + size, size)
+                print(")", end="")
                 return
-    # 만약 여기까지 왔다면 모두 다 같은 숫자라는 의미
-    print(a[r][c], end='')
 
-def main():
-    global N, a
-    N = int(read().rstrip())
-    # 인덱스 1부터 사용하기 위해
-    a = [[]]
-
-    for i in range(N):
-        temp = list(map(int, read().rstrip()))
-        a.append([0] + temp)
-
-    quad_tree(1, 1, N)
+    print(arr[start_row][start_col], end="")
+    return
 
 
+n = int(input())
+arr = []
+for _ in range(n):
+    arr.append(list(map(int, list(input().rstrip()))))
 
-if __name__ == '__main__':
-    main()
+division(0, 0, n)   

@@ -1,20 +1,4 @@
 import sys
-<<<<<<< HEAD
-
-def getSubsum(data) :
-    '''
-    n개의 숫자가 list로 주어질 때, 그 연속 부분 최대합을 반환하는 함수를 작성하세요.
-    '''
-    sum = 0
-    res = -1e9
-    for i in data:
-        sum += i
-        if sum < 0:
-            sum = 0
-            continue
-        res = max(res,sum)
-    return res
-=======
 read = sys.stdin.readline
 global N, M, visited
 def comb(cnt, start):
@@ -28,7 +12,6 @@ def comb(cnt, start):
         visited[i] = True
         comb(cnt + 1, i + 1)
         visited[i] = False
->>>>>>> 363a7414a868f5273eb888715af9da62ae8902eb
 
 def main():
     '''
