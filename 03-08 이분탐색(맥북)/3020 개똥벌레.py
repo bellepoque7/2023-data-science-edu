@@ -1,4 +1,5 @@
 #https://hongcoding.tistory.com/m/5
+#biselct로 구현도 가능함.
 
 n, h = map(int, input().split())
 
