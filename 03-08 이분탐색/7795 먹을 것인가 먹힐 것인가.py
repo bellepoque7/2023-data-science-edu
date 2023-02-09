@@ -19,6 +19,6 @@ for _ in range(int(input())):
     a_list = sorted(list(map(int, input().split())))
     b_list = sorted(list(map(int, input().split())))
     cnt = 0
-    for a in A:
+    for a in a_list:
         cnt += (binary_search(b_list, a_list) + 1)
     print(cnt)

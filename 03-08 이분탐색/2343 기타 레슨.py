@@ -1,3 +1,4 @@
+#https://jainn.tistory.com/232
 import sys
 input = sys.stdin.readline
 
