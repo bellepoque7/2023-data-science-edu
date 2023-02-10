@@ -62,7 +62,13 @@ for i in range(n):
         if graph[i][j] != 0:
             corrd_comb.append((i,j,graph[i][j]))
 
+
+## COMbination 안하고 
+##또한 min_dist ==1일때 탈출하면 시간 7000ms -> 70ms
 for i in combinations(corrd_comb,2):
     if i[0][2] != i[1][2]:
+        if min_dist == 1:
+            break
         min_dist = min(min_dist, abs(i[0][0]-i[1][0]) + abs(i[0][1]-i[1][1])-1)
+        
 print(min_dist)
