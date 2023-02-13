@@ -46,9 +46,9 @@ def dfs(r,c,is_num):
                 dfs(nr,nc,is_num)
                 # print('end')
     #재귀 끝날때마다 그래프 확인하려면 하기 주석 제거 
-    for i in range(n):
-        print(graph[i])
-    print('----')
+    # for i in range(n):
+        # print(graph[i])
+    # print('----')
     return 
 
 #그래프를 변형하되 섬마다 2,3,4 라고 표기하기

@@ -38,17 +38,17 @@ def bfs():
 
         #잘모르면 시각화해서 봅시다.
         # print(Q)
-        # print(day_cnt,'일차 감염이 끝나면')
+        # print(day_cnt,'일차 숙성이 끝나면')
         # for i in range(n):
         #     print(visited[i])
         # print('---')
         
 
-# 남은 생쥐가 있는지 없는지 체크
+# 덜익은 토마토가 있는지 없는지 체크
 def check():
     for i in range(n):
         for j in range(m):
-            # 방문하지도 않(못)했고, 살아있는 생쥐가 있다면
+            # 방문하지도 않(못)했고, 덜익은 토마토가 있다면
             if visited[i][j] == 0 and graph[i][j]==0:
                 print(-1)
                 return
@@ -57,6 +57,3 @@ def check():
 
 bfs()
 check()
-
-        
-#cnt_mouse: 23마리
