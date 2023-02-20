@@ -1,5 +1,7 @@
 -- 현재 접근 가능한 데이터베이스 조회 
 SHOW DATABASES;
+-- 데이터베이스 선택하기
+use mysql;
 -- 현재 데이터베이스 테이블 보기
 SHOW TABLES;
 
