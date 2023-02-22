@@ -1,34 +1,4 @@
 import sys
-n,m = map(int,sys.stdin.readline().split())
-dots = tuple(map(int,sys.stdin.readline().split()))
-lines = []
-for i in range(m):
-    lines.append(tuple(map(int,sys.stdin.readline().split())))
-# print(n,m)
-# print(dots)
-# print(lines)
-
-
-#완전탐색 O(n^2) 시간초과
-for i in lines:
-    cnt = 0
-    for j in dots:
-        if j >= i[0] and j <= i[1]:
-            cnt +=1 
-    print(cnt)
-
-
-
-
-
-
-
-
-
-
-
-
-import sys
 
 n, m = map(int, sys.stdin.readline().split())
 dot = list(map(int, sys.stdin.readline().split()))
@@ -64,3 +34,21 @@ def dot_max(b):   # 선분 중 가장 큰 점 구하기
 for i in range(m):
     a, b = map(int, sys.stdin.readline().split())
     print(dot_max(b) - dot_min(a) + 1)
+
+# import sys
+# n,m = map(int,sys.stdin.readline().split())
+# dots = tuple(map(int,sys.stdin.readline().split()))
+# lines = []
+# for i in range(m):
+#     lines.append(tuple(map(int,sys.stdin.readline().split())))
+# print(n,m)
+# print(dots)
+# print(lines)
+
+#완전탐색 O(n^2) 시간초과
+# for i in lines:
+#     cnt = 0
+#     for j in dots:
+#         if j >= i[0] and j <= i[1]:
+#             cnt +=1 
+#     print(cnt)

@@ -1,3 +1,4 @@
+'''
 
 def min_switches(arr):
     n = len(arr)
@@ -19,3 +20,5 @@ def min_switches(arr):
     return abs(sum(switches))
 
 min_switches([1, 2, 3, 4, 2, 1])
+
+'''
