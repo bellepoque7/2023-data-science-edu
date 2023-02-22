@@ -10,12 +10,24 @@ for i in range(m):
 
 
 #완전탐색 O(n^2) 시간초과
-# for i in lines:
-#     cnt = 0
-#     for j in dots:
-#         if j >= i[0] and j <= i[1]:
-#             cnt +=1 
-#     print(cnt)
+for i in lines:
+    cnt = 0
+    for j in dots:
+        if j >= i[0] and j <= i[1]:
+            cnt +=1 
+    print(cnt)
+
+
+
+
+
+
+
+
+
+
+
+
 import sys
 
 n, m = map(int, sys.stdin.readline().split())

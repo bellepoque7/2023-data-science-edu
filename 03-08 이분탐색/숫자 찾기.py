@@ -1,5 +1,4 @@
-import sys
-
+import sysㄴ
 def binarySearch(data, m) :
     '''
     n개의 숫자 중에서 m이 존재하면 "Yes", 존재하지 않으면 "No"를 반환하는 함수를 작성하세요.
@@ -36,7 +35,7 @@ def main():
     이 부분은 수정하지 마세요.
     '''
     data = [int(x) for x in input().split()]
-    m = int(input())
+    m = int(input())ㄴㄴ
     print(binarySearch(data, m))
 
 if __name__ == "__main__":
