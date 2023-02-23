@@ -1,5 +1,6 @@
 #목표 dfs로 각 섬을 숫자로 바꾸기 
 import sys
+from collections import *
 #기본 재귀가 너무많이 들어가므로 리밋올리기
 sys.setrecursionlimit(10**9)
 
@@ -7,8 +8,6 @@ sys.setrecursionlimit(10**9)
 graph = []
 #섬(1)의 좌표 넣을 리스트, 추후 큐 형태로 순환할 것
 island = []
-#나중에 섬의 위치 좌표 넣을 리스트 생성
-corrd_comb = []
 min_dist = 10e9
 n = int(input())
 visited = [[0]*n]*n
@@ -55,19 +54,27 @@ for i in island:
     dfs(i[0],i[1],is_num)
     is_num += 1
 
-#각 섬의 좌표를 조합으로 만들어서 xy좌표의 기준 벡터 최소값 구하기
-for i in range(n):
-    for j in range(n):
-        if graph[i][j] != 0:
-            corrd_comb.append((i,j,graph[i][j]))
+def bfs(n):
+    global ans,min_dist
+    check = [[-1] * n for _ in range(n)]
+    q = deque(island)
 
+    while q:
+        r,c = q.popleft()
+        for i in range(4):
+            nr = r+dr[i]
+            nc = c+dc[i]
+            if nr < 0 or nr >= n or nc < 0 or nc >= n:
+                continue
+            #다른 섬에 도착한 경우
+            if graph[nr][nc] > 0 and graph[nr][nc] != n:
+                min_dist = min(min_dist,check[r][c])
+                return
+            #바다이고, 방문한 적이 없다면
+            if graph[nr][nc] == 0 and check[nr][nc] == -1:
+                check[nr][nc] = check[r][c]+1
+                q.append((nr,nc))
 
-## COMbination 안하고 
-##또한 min_dist ==1일때 탈출하면 시간 7000ms -> 70ms
-for i in combinations(corrd_comb,2):
-    if i[0][2] != i[1][2]:
-        if min_dist == 1:
-            break
-        min_dist = min(min_dist, abs(i[0][0]-i[1][0]) + abs(i[0][1]-i[1][1])-1)
-        
+for i in range(2,is_num):
+    bfs(i)
 print(min_dist)

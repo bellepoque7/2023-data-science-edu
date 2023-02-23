@@ -49,26 +49,19 @@ def dfs(r,c,is_num):
     # for i in range(n):
         # print(graph[i])
     # print('----')
-    return 
-
 #그래프를 변형하되 섬마다 2,3,4 라고 표기하기
 for i in island:
     dfs(i[0],i[1],is_num)
     is_num += 1
-
 #각 섬의 좌표를 조합으로 만들어서 xy좌표의 기준 벡터 최소값 구하기
 for i in range(n):
     for j in range(n):
         if graph[i][j] != 0:
             corrd_comb.append((i,j,graph[i][j]))
 
-
-## COMbination 안하고 
-##또한 min_dist ==1일때 탈출하면 시간 7000ms -> 70ms
 for i in combinations(corrd_comb,2):
+    #두 좌표가같지 않을때만 (동일 위치 비교 무의미)
     if i[0][2] != i[1][2]:
-        if min_dist == 1:
-            break
         min_dist = min(min_dist, abs(i[0][0]-i[1][0]) + abs(i[0][1]-i[1][1])-1)
         
 print(min_dist)
