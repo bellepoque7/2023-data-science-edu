@@ -48,8 +48,6 @@ for i in island:
     if graph[i[0]][i[1]] == 1:
         dfs(i[0],i[1],is_num)
         is_num += 1
-
-
 #visited 초기화
 
 # 숫자표기된 graph 보기
@@ -98,5 +96,4 @@ def bfs(island_num):
 for i in range(2,is_num):
     #i 번째 섬을 확장해나가기
     bfs(i)
-    # break
 print(min_dist-1)
