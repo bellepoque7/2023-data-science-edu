@@ -60,8 +60,7 @@ for i in range(n):
             corrd_comb.append((i,j,graph[i][j]))
 
 for i in combinations(corrd_comb,2):
-    #두 좌표가같지 않을때만 (동일 위치 비교 무의미)
+    #두 좌표 섬위치가 같지 않을때만 (동일 섬 비교 무의미)
     if i[0][2] != i[1][2]:
         min_dist = min(min_dist, abs(i[0][0]-i[1][0]) + abs(i[0][1]-i[1][1])-1)
-        
 print(min_dist)
