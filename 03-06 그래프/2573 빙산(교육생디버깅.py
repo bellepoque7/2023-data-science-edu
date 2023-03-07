@@ -98,8 +98,8 @@ def main():
 				if graph[i][j] != 0 and visited[i][j] == 0:
 					graph[i][j] = max(0,graph[i][j] -melt(i, j)) 
                     #여기가 문제. 실시간으로 melt 업데이트하면 graph가 변형됨
-                    #따라서 MElt는 graph2에 녹아야하는 수를 append하고
-                    #grpah = graph - graph2 형식으로 빼져야함.
+                    #따라서 melt는 graph2에 녹아야하는 2d-array를 생성하고
+                    #graph = graph - graph2 형식으로 업데이트해야함
                     '''
                     0 0 0 0             0 0 0 0
                     0 1 7 0  -> 옳게된 예 0 0 4 0
