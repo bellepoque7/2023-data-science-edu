@@ -43,5 +43,5 @@ python 기본, 자료구조, 알고리즘(백준문제), 확률통계, 데이터
     - stock: 주가 데이터 회귀 예측하기
     - seq2seq: seq2seq(encorder-decorder) 모델 구현하기
     - kobert: 모델 플랫폼 사용하기, chat-gpt api로 구현하기
-    (Hugging Face)[https://huggingface.co/models?pipeline_tag=summarization&sort=downloads]
+    [Hugging Face](https://huggingface.co/models?pipeline_tag=summarization&sort=downloads)
 
