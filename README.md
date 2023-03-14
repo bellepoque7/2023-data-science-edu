@@ -25,6 +25,9 @@ python 기본, 자료구조, 알고리즘(백준문제), 확률통계, 데이터
 예제별 실습코드
 
 - 07-00 딥러닝
+  - 추천자료
+    - 책: 밑바닥부터 시작하는 딥러닝(사이토 고기)
+    - 강의: cs231, 코세라 앤드류 응
   - CNN
     - cnn: filter, padding, Pooling layer, optimizer 손실함수 개념익히고 구현하기
     - cnn2: 함수형 방식으로 구현하기
@@ -38,3 +41,7 @@ python 기본, 자료구조, 알고리즘(백준문제), 확률통계, 데이터
     - rnn_imdb: 정제된 영화 리뷰데이터로 긍정,부정 분류모델 구현하기
     - korean_sentiment: 네이버 리뷰 댓글로 자연어 토큰화, 전처리(정규표현식, 불용어제거, 숫자 인코딩) 익히기
     - stock: 주가 데이터 회귀 예측하기
+    - seq2seq: seq2seq(encorder-decorder) 모델 구현하기
+    - kobert: 모델 플랫폼 사용하기, chat-gpt api로 구현하기
+    (Hugging Face)[https://huggingface.co/models?pipeline_tag=summarization&sort=downloads]
+
