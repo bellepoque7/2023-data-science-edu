@@ -18,7 +18,7 @@
   - 비지도학습: 정답데이터 없이 입력데이터의 수치만으로 수행하는 알고리즘
     - ex3) 군집화(clustering)
     <img width="700" alt="image" src="https://user-images.githubusercontent.com/39439424/230241003-c004eb0b-3ca7-4b22-a754-9ff24b005a51.png">
-    (트위터 심클러스터링)[https://github.com/twitter/the-algorithm/blob/main/src/scala/com/twitter/simclusters_v2/README.md]
+    [트위터 심클러스터링](https://github.com/twitter/the-algorithm/blob/main/src/scala/com/twitter/simclusters_v2/README.md)
 
 - 머신러닝과 딥러닝: [한장요약](https://github.com/bellepoque7/2023-data-science-edu/blob/main/8.%20%EB%B6%84%EC%84%9D%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/MLvsDL.png)
     - 머신러닝: 통계적 알고리즘을 기반(모듈: sckit-learn)
