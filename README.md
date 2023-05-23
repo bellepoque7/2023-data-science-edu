@@ -38,7 +38,6 @@ python 기본, 자료구조, 알고리즘(백준문제), 확률통계, 데이터
   - RNN
     - rnn_imdb: 정제된 영화 리뷰데이터로 긍정,부정 분류모델 구현하기
     - w2v_practice: nltk 모듈로 자연어 처리하기(Word-2-vec)
-    - rnn_imdb: 정제된 영화 리뷰데이터로 긍정,부정 분류모델 구현하기
     - korean_sentiment: 네이버 리뷰 댓글로 자연어 토큰화, 전처리(정규표현식, 불용어제거, 숫자 인코딩) 익히기
     - stock: 주가 데이터 회귀 예측하기
     - seq2seq: seq2seq(encorder-decorder) 모델 구현하기
